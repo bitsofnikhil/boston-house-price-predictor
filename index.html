@@ -2,77 +2,62 @@
 <html>
 <head>
     <title>Boston House Price Predictor</title>
-    <style>
-       /* body { font-family: Arial, sans-serif; background-color: #f9f9f9; text-align: center; padding: 30px; }
-        h2 { color: #444; }
-        form { background: white; padding: 20px; border-radius: 10px; display: inline-block; box-shadow: 0px 0px 10px #aaa; }
-        input[type="text"] { width: 250px; padding: 10px; margin: 5px; border-radius: 5px; border: 1px solid #ccc; }
-        input[type="submit"] { padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; }
-        input[type="submit"]:hover { background-color: #218838; }
-        h3 { margin-top: 20px; color: #007bff; }*/
-        /* static/style.css */
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
-    margin: 0;
-    padding: 30px;
-    text-align: center;
-}
-
-h2 {
-    color: #333;
-    margin-bottom: 30px;
-}
-
-form {
-    background-color: #ffffff;
-    padding: 30px 40px;
-    border-radius: 10px;
-    display: inline-block;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-input[type="text"] {
-    width: 280px;
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 15px;
-}
-
-input[type="submit"] {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 25px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-h3 {
-    margin-top: 30px;
-    font-size: 20px;
-    color: #28a745;
-}
-    </style>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
-    <h2>Boston House Price Predictor</h2>
+
+<h2>Boston House Price Predictor</h2>
+
     <form action="/predict" method="post">
-        {% for i in range(13) %}
-            <input type="text" name="feature{{ i }}" placeholder="Feature {{ i+1 }}" required><br>
-        {% endfor %}
-        <input type="submit" value="Predict">
+
+      <label>CRIM — Per Capita Crime Rate</label>
+      <input type="text" name="crim" placeholder="e.g., 0.12" required>
+
+      <label>ZN — Residential Land Zoned (%)</label>
+      <input type="text" name="zn" placeholder="e.g., 18.0" required>
+
+      <label>INDUS — Non-Retail Land (%)</label>
+      <input type="text" name="indus" placeholder="e.g., 2.3" required>
+
+      <label>CHAS — Near River (1 = Yes, 0 = No)</label>
+      <input type="text" name="chas" placeholder="0 or 1" required>
+
+      <label>NOX — Nitric Oxide Concentration</label>
+      <input type="text" name="nox" placeholder="e.g., 0.45" required>
+
+      <label>RM — Average Number of Rooms</label>
+      <input type="text" name="rm" placeholder="e.g., 6.2" required>
+
+      <label>AGE — % of Houses Built Before 1940</label>
+      <input type="text" name="age" placeholder="e.g., 65.0" required>
+
+      <label>DIS — Distance to Employment Centers</label>
+      <input type="text" name="dis" placeholder="e.g., 4.3" required>
+
+      <label>RAD — Highway Access Index</label>
+      <input type="text" name="rad" placeholder="e.g., 1 to 24" required>
+
+      <label>TAX — Property Tax Rate</label>
+      <input type="text" name="tax" placeholder="e.g., 296" required>
+
+      <label>PTRATIO — Pupil-Teacher Ratio</label>
+      <input type="text" name="ptratio" placeholder="e.g., 15.3" required>
+
+      <label>B — African American Population Index</label>
+      <input type="text" name="b" placeholder="e.g., 392.5" required>
+
+      <label>LSTAT — % Lower Status Population</label>
+      <input type="text" name="lstat" placeholder="e.g., 12.5" required>
+
+      <input type="submit" value="Predict">
+
     </form>
-    <h3>{{ prediction_text }}</h3>
+
+
+{% if prediction_text %}
+<h3>{{ prediction_text }}</h3>
+{% endif %}
+
 </body>
 </html>
