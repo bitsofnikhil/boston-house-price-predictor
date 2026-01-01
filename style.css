@@ -1,0 +1,139 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(120deg, #5b86e5, #36d1dc);
+    margin: 0;
+    padding: 40px 20px;
+    color: #333;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Title */
+h2 {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2)
+    text-align: center;
+    text-transform: uppercase
+    
+    letter-spacing: 2px;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 35px;
+    font-size: 2.2rem;
+    
+    letter-spacing: 1px;
+    
+}
+
+/* App Card Container */
+form {
+    background-color: #ffffff;
+    padding: 35px 40px;
+    border-radius: 16px;
+    display: inline-block;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+    max-width: 480px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Soft zoom effect */
+form:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
+}
+
+/* Input fields */
+input[type="text"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 8px 0;
+    border: 1.8px solid #cfcfcf;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color .3s ease, box-shadow .3s ease;
+}
+
+/* Input focus highlight */
+input[type="text"]:focus {
+    border-color: #0b79ff;
+    box-shadow: 0 0 8px rgba(11, 121, 255, 0.4);
+    outline: none;
+}
+
+/* Placeholder style */
+input[type="text"]::placeholder {
+    color: #9b9b9b;
+    font-style: italic;
+}
+
+/* Predict Button */
+input[type="submit"] {
+    background: linear-gradient(45deg, #007bff, #00a2ff);
+    color: white;
+    padding: 14px 0;
+    margin-top: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    width: 100%;
+    transition: transform .15s ease, box-shadow .2s ease, background .2s;
+}
+
+/* Button Hover Effect */
+input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 86, 179, 0.45);
+    background: linear-gradient(45deg, #0056b3, #0088ff);
+}
+
+/* Prediction Output */
+h3 {
+    margin-top: 35px;
+    font-size: 22px;
+    color: #12d35a;
+    font-weight: 700;
+}
+
+/* Error style (if needed later) */
+.error-text {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+
+    body {
+        padding: 18px 10px;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+    }
+
+    form {
+        max-width: 100%;
+        padding: 25px 18px;
+    }
+
+    input[type="submit"] {
+        font-size: 16px;
+        padding: 12px 0;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}
